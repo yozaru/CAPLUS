@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<center><h1>C+PLUS Memeber</h1></center>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>写真</th>
+      <th>氏名</th>
+      <th>年齢</th>
+      <th>会社</th>
+      <th>一言</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @members.each do |member| %>
+      <tr>
+        <td><image src="<%= member.image %>" width="100" height="100"></td>
+        <td><%= member.name %></td>
+        <td><%= member.age %></td>
+        <td><%= member.company %></td>
+        <td><%= member.about %></td>
+        <td><%= link_to 'Show', member %></td>
+        <td><%= link_to 'Edit', edit_member_path(member) %></td>
+        <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Member', new_member_path %>
