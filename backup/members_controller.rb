@@ -9,8 +9,7 @@ class MembersController < ApplicationController
   end
 
   def search
-   #@members = Member.where("name like ?","%#{params[:stxt]}%")
-   @members = Member.search_names_or(params[:stxt])
+   @members = Member.where("name like ?","%#{params[:stxt]}%")
    render :index
   end
   # GET /members/1

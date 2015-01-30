@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
 
+  devise_for :admins
+  resources :employees
+
   get 'info/index'
   
   root :to => 'info#index'
 
+  match 'search' => 'members#search', :via => :post
 #root to: "home#index"
 
 #  resources :tests

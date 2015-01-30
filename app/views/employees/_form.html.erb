@@ -1,18 +1,17 @@
-<%= simple_form_for(@member) do |f| %>
+<%= simple_form_for(@employee) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :age, as: :string %>
-    <%= f.input :company %>
-    <%= f.input :job %>
+    <%= f.input :zaseki %>
     <%= f.input :about %>
   </div>
-    <!-- 追加箇所 開始 -->
+
+<!-- 追加箇所 開始 -->
   <div class="field">
-    <% if @member.image? %>
+    <% if @employee.image? %>
       <div class="thumbnail">
-        <%= image_tag @member.image.url %>
+        <%= image_tag @employee.image.url %>
       </div>
     <% end %><br>
     <%= f.label :image %><br>
@@ -21,7 +20,7 @@
   </div>
   <div class="field">
     <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
-    <% if @member.persisted? && @member.image? %>
+    <% if @employee.persisted? && @employee.image? %>
       <label>
         <%= f.check_box :remove_image %>
         画像を削除
@@ -29,6 +28,10 @@
     <% end %>
   </div>
   <!-- 追加箇所 終了 -->
+
+
+
+
   <div class="form-actions">
     <%= f.button :submit %>
   </div>

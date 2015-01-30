@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @employee.name %>
+</p>
+
+<p>
+  <strong>Zaseki:</strong>
+  <%= @employee.zaseki %>
+</p>
+
+<p>
+  <strong>About:</strong>
+  <%= @employee.about %>
+</p>
+
+<!-- 追加箇所 開始 -->
+<p>
+  <strong>Image:</strong>
+  <% if @employee.image? %>
+    <div class="thumbnail">
+      <%= image_tag @employee.image.url %>
+    </div>
+  <% end %>
+</p>
+<!-- 追加箇所 終了 -->
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_path %>

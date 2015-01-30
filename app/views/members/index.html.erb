@@ -1,32 +1,35 @@
 <p id="notice"><%= notice %></p>
 
 <center><h1>C+PLUS Memeber</h1></center>
+<br>
 <div class="container">
 <div class="table-responsive">
-<table class="table table-striped table-bordered table-hover table-condensed" >
-  <thead>
-    <tr class="active">
-      <th>写真</th>
-      <th>氏名</th>
-      <th>年齢</th>
-      <th>会社</th>
-      <th>一言</th>
-      <th>参照</th>
+<table class="span11 table table-striped table-bordered table-hover table-condensed table-responsive" >
+
+  <thead class="scrollHead">
+  <tr class="active">
+      <th width="100">写真</th>
+      <th width="118">氏名</th>
+      <th width="50">年齢</th>
+      <th width="129">会社</th>
+      <th width="120">職種</th>
+      <th width="200">一言</th>
       <th>編集</th>
-      <th>削除</th>
-    </tr>
+  </tr>
   </thead>
-  <tbody>
+  <tbody class="scrollBody">
     <% @members.each do |member| %>
       <tr>
         <td><image src="<%= member.image %>" width="100" height="100"></td>
-        <td><%= member.name %></td>
-        <td><%= member.age %></td>
+        <td width="118"><%= member.name %></td>
+        <td width="50"><%= member.age %></td>
         <td><%= member.company %></td>
-        <td><%= member.about %></td>
-        <td><%= link_to '参照', member %></td>
-        <td><%= link_to '更新', edit_member_path(member) %></td>
-        <td><%= link_to '削除', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td width="120"><%= member.job %></td>
+        <td width="200"><%= member.about %></td>
+        <td><button type="button" class="btn btn-info" ><%= link_to '参照', member %></td></button>
+        <td><button type="button" class="btn btn-warning" ><%= link_to '更新', edit_member_path(member) %></td></button>
+        <td><button type="button" class="btn btn-danger" ><%= link_to '削除', member, method: :delete, data: { confirm: '削除すると元に戻せません！本当に削除しますか?' } %></td></button>
+
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +37,6 @@
 </div>
 </div>
 <br>
-<button type="button" class="btn btn-primary" style="background:blue;color:black"><%= link_to 'New Member', new_member_path %></button>
+<p class="fixed-0">
+<button type="button" class="btn btn-success" ><%= link_to 'New Member', new_member_path %></button>
+</p>
