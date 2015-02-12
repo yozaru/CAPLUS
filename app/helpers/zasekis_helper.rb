@@ -1,0 +1,2 @@
+module ZasekisHelper
+end

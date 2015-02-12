@@ -5,9 +5,12 @@ Rails.application.routes.draw do
 
   get 'info/index'
   
-  root :to => 'info#index'
+  root :to => 'employees#index'
 
-  match 'search' => 'members#search', :via => :post
+  match 'search' => 'employees#search', :via => :post
+  
+  get "employees/kanrimeibo"
+
 #root to: "home#index"
 
 #  resources :tests

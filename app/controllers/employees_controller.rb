@@ -12,6 +12,14 @@ class EmployeesController < ApplicationController
     respond_with(@employee)
   end
 
+  def kanrimeibo
+  end
+  
+   def search
+      @employees = Employee.search_names_or(params[:stxt])
+      render :index
+   end
+
   def new
     @employee = Employee.new
     respond_with(@employee)
@@ -44,6 +52,6 @@ class EmployeesController < ApplicationController
     end
 
     def employee_params
-      params.require(:employee).permit(:name, :zaseki, :about, :image, :image_cache, :remove_image)
+      params.require(:employee).permit(:name, :zaseki, :about, :job, :project, :pc, :notepc, :shumi, :game, :furigana, :mail, :image, :image_cache, :remove_image)
     end
 end
