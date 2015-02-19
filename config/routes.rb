@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :admins
+#devise_for :users, only: :none
   resources :employees
 
   get 'info/index'
@@ -9,7 +10,7 @@ Rails.application.routes.draw do
 
   match 'search' => 'employees#search', :via => :post
   
-  get "employees/kanrimeibo"
+  get 'kanri' => 'employees#kanri'
 
 #root to: "home#index"
 
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
 
 #  resources :products
 
-  resources :members
+#  resources :members
 
   #resources :cplus
 

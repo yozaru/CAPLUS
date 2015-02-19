@@ -1,43 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>氏名:</strong>
   <%= @employee.name %>
 </p>
 
 <p>
-  <strong>Zaseki:</strong>
+  <strong>座席:</strong>
   <%= @employee.zaseki %>
 </p>
 
 <p>
-  <strong>About:</strong>
+  <strong>社員番号:</strong>
   <%= @employee.about %>
 </p>
 
 <p>
-  <strong>Job:</strong>
+  <strong>職種:</strong>
   <%= @employee.job %>
 </p>
 
 <p>
-  <strong>Project:</strong>
+  <strong>プロジェクト:</strong>
   <%= @employee.project %>
-</p>
-
-<p>
-  <strong>PC番号:</strong>
-  <%= @employee.pc %>
-</p>
-
-<p>
-  <strong>NotePc番号:</strong>
-  <%= @employee.notepc %>
-</p>
-
-<p>
-  <strong>Game:</strong>
-  <%= @employee.game %>
 </p>
 
 <p>
@@ -45,9 +30,20 @@
   <%= @employee.shumi %>
 </p>
 
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <strong>自己紹介:</strong>
+    </div>
+    <div class="col-md-10">
+      <%= @employee.jico %>
+    </div>
+  </div>
+</div>
+<br>
 <!-- 追加箇所 開始 -->
 <p>
-  <strong>Image:</strong>
+  <strong>写真:</strong>
   <% if @employee.image? %>
     <div class="thumbnail">
       <%= image_tag @employee.image.url %>
