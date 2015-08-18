@@ -5,10 +5,14 @@ Rails.application.routes.draw do
   resources :employees
 
   get 'info/index'
+
+  get 'employees/index/:page' => "employee#index"
   
   root :to => 'employees#index'
 
   match 'search' => 'employees#search', :via => :post
+  
+  match 'kanri_search' => 'employees#kanri_search', :via => :post
   
   get 'kanri' => 'employees#kanri'
 

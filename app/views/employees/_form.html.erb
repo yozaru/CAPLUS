@@ -2,15 +2,15 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :furigana %>
-    <%= f.input :zaseki %>
-    <%= f.input :mail %>
-    <%= f.input :about %>
-    <%= f.input :job %>
-    <%= f.input :project %>
-    <%= f.input :shumi %>
-    <%= f.text_area :jico, :size=>"200x10" %>  
+    <%= f.input :name, :label => '氏名' %>
+    <%= f.input :furigana, :label => 'フリガナ' %>
+    <%= f.input :zaseki, :label => '座席番号' %>
+    <%= f.input :mail, :label => 'メール' %>
+    <%= f.input :about, :label => '社員番号' %>
+    <%= f.input :job, :label => '職種' %>
+    <%= f.input :project, :label => 'プロジェクト' %>
+    <p>自己紹介</p>
+    <%= f.text_area :jico, :label => '自己紹介', :size=>"200x10" %>  
 </div>
 
 <!-- 追加箇所 開始 -->
@@ -34,9 +34,6 @@
     <% end %>
   </div>
   <!-- 追加箇所 終了 -->
-
-
-
 
   <div class="form-actions">
     <%= f.button :submit %>

@@ -1,0 +1,42 @@
+<%= simple_form_for(@employee) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, :label => '氏名' %>
+    <%= f.input :furigana, :label => 'フリガナ' %>
+    <%= f.input :zaseki, :label => '座席番号' %>
+    <%= f.input :mail, :label => 'メール' %>
+    <%= f.input :about, :label => '社員番号' %>
+    <%= f.input :job, :label => '職種' %>
+    <%= f.input :project, :label => 'プロジェクト' %>
+    <%= f.input :project, :label => 'プロジェクト' %>
+    <p>自己紹介</p>
+    <%= f.text_area :jico, :label => '自己紹介', :size=>"200x10" %>  
+</div>
+
+<!-- 追加箇所 開始 -->
+  <div class="field">
+    <% if @employee.image? %>
+      <div class="thumbnail">
+        <%= image_tag @employee.image.url %>
+      </div>
+    <% end %><br>
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+  </div>
+  <div class="field">
+    <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
+    <% if @employee.persisted? && @employee.image? %>
+      <label>
+        <%= f.check_box :remove_image %>
+        画像を削除
+      </label>
+    <% end %>
+  </div>
+  <!-- 追加箇所 終了 -->
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

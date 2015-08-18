@@ -4,7 +4,7 @@
 <center><h1>1717 Memeber list</h1></center>
 <div class="container">
 <div class="tablecenter">
-<table class="span11 table table-striped table-bordered table-hover table-condensed table-responsive yokohaba" >
+<table class="span11 table table-striped table-bordered table-hover table-condensed table-responsive yokohaba-kanri">
   <thead class="scrollHead">
     <tr class="active">
       <th width="80">Picture</th>
@@ -14,6 +14,10 @@
       <th width="80">社員番号</th>
       <th width="200">職種</th>
       <th width="80">プロジェクト</th>
+      <th width="80">入社日</th>
+      <th width="80">雇用形態</th>
+      <th width="80">委託元</th>
+      <th width="80">金額</th>
       <th width="80">管理</th>
     </tr>
 
@@ -29,6 +33,10 @@
         <td width="80"><%= employee.about %></td>
         <td width="200"><%= employee.job %></td>
         <td width="80"><%= employee.project %></td>
+        <td width="80"><%= employee.nyusha %></td>
+        <td width="80"><%= employee.koyo %></td>
+        <td width="80"><%= employee.itaku %></td>
+        <td width="80"><%= employee.kingaku %></td>
         <td><button type="button" class="btn btn-info" ><%= link_to '参照', employee %></td></button>
         <td><button type="button" class="btn btn-warning" ><%= link_to '更新', edit_employee_path(employee) %></button></td>
         <td><button type="button" class="btn btn-danger" ><%= link_to '削除', employee, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>

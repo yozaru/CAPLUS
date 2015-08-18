@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>メンバー＆座席表</h1>
-<center><h1>1717 Memeber list</h1></center>
+<center><h1>1717 Member list</h1></center>
+	
+<%= paginate(@employees) %>
 <div class="container">
 <div class="tablecenter">
 <table class="span11 table table-striped table-bordered table-hover table-condensed table-responsive yokohaba" >
